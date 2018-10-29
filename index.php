@@ -13,7 +13,9 @@
 
     <!-- CABEÇALHO -->
     <header>
-        <img src="" alt="">
+       
+        <img class="logo" src="" alt="logo">
+       
         <nav>
             <a href="#">categorias</a>
             <a href="#">meus ingressos</a>
@@ -25,7 +27,7 @@
     <div class="container">
 
         <!-- BANNERS -->
-        <div id="main_banner"></div>
+        <div id="main_banner">aaaaaaaa</div>
         <div id="eventos_regiao">
             <h3>eventos na sua região</h3>
             <div id="lista_eventos"></div>
@@ -34,6 +36,13 @@
 
         <!-- PRÓXIMOS EVENTOS -->
         <section id="proximos_eventos">
+            <div class="evento">
+                <h3>nome do evento</h3>
+                <h1>21</h1>
+                <h2>outubro</h2>
+          
+
+            </div>
             <div class="evento">
                 <h3>nome do evento</h3>
                 <h1>21</h1>
