@@ -1,0 +1,138 @@
+@import url('reset.css');
+
+* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+html{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+header{
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+    color: #fff;
+    padding: 12px 20px;
+    box-shadow: 0px 2px 8px 0px #c3c3c3;
+}
+.logo{
+    width: 200px;
+    float: left;
+}
+header a{
+    color: #fff;
+    background-color: #db2938;
+    float: right;
+    margin: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 5px 8px;
+    border-radius:3px;
+    font-weight: bold;
+}
+
+.container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#login{
+    width: 700px;
+    height: 450px;
+    display: flex;
+    padding: 40px 80px;
+    align-items: center;
+    box-shadow: 0px 2px 8px 0px #c3c3c3;
+}
+
+#login img{
+    width: 200px;
+}
+
+#form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+input{
+    padding: 10px;
+    color: #242323;
+    border-radius: 5px;
+    border: solid #c3c3c3 1px;
+    /* background-color: #f1f1f1; */
+    margin: 5px 0;
+    width: 300px;
+}
+
+footer{
+    width: 100%;
+    height: auto;
+    background-color: #242323;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+}
+
+footer p{
+    padding: 10px;
+}
+footer i{
+    padding-top: 20px;
+    color: #fff;
+    font-size: 1.3em;
+}
+
+i{
+    padding: 7px;
+    color: #fff;
+}
+
+/* Tablet */
+@media screen and (max-width: 800px) {
+    #proximos_eventos{
+        grid-template-rows: repeat(3,auto);
+        grid-template-columns: repeat(2,auto);
+        grid-template-areas: "evento1 evento2"
+                             "evento3 evento4"
+                             "evento5 evento5";
+        grid-gap: 15px;
+    }
+}
+
+
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+    .container{
+        grid-template-columns: auto;
+        grid-template-rows: repeat(3,auto);
+        grid-gap: 15px;
+        grid-template-areas: "banner"
+                             "eventos"
+                             "eventos_proximos";
+                           
+    }
+        
+    #proximos_eventos{
+        grid-template-rows: repeat(5,auto);
+        grid-template-columns: auto;
+        grid-template-areas: "evento1"
+                             "evento2"
+                             "evento3"
+                             "evento4"
+                             "evento5";
+        grid-gap: 15px;
+                            
+    }
+    
+}
