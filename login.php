@@ -12,18 +12,9 @@
 
 <body>
 
-    <!-- CABEÇALHO -->
-    <header>
-
-            <img class="logo" src="imgs/logo.png" alt="logo">
-
-        <nav>
-            <a href="meusingressos.php"><i class="fas fa-ticket-alt"></i>meus ingressos</a>
-            <a href="index.php"><i class="fas fa-plus"></i>criar evento</a>
-            <a href="categorias.php"><i class="fas fa-caret-down"></i>categorias</a>
-            <a href="index.php"><i class="fas fa-home"></i>home</a>
-        </nav>
-    </header>
+    <?php 
+        include('php/layout/header.php');
+    ?>
 
     <!-- CONTEÚDO PRINCIPAL -->
     <div class="container">
@@ -35,7 +26,7 @@
             </div>
 
             <div id="form">
-                <form action="logar.php">
+                <form action="php/logar.php" method="POST">
                     <input type="text" name="user" id="user" placeholder="Usuário"></br>
                     <input type="password" name="senha" id="senha" placeholder="Senha"></br>
                     <input type="submit" value="ENTRAR">
@@ -47,15 +38,9 @@
 
     </div>
 
-    <!-- RODAPÉ -->
-    <footer>
-        <div id="social_media">
-            <a href=""><i class="fab fa-twitter"></i></a>
-            <a href=""><i class="fab fa-facebook-f"></i></a>
-            <a href=""><i class="fab fa-instagram"></i></a>
-        </div>
-        <p>Copyright &copy; 2018 - Ticket House</p>
-    </footer>
+    <?php 
+        include('php/layout/footer.php');
+    ?>
 
 </body>
 

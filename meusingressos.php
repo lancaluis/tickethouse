@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -12,25 +13,16 @@
 
 <body>
 
-    <!-- CABEÇALHO -->
-    <header>
-
-            <img class="logo" src="imgs/logo.png" alt="logo">
-
-        <nav>
-            <a href="meusingressos.php"><i class="fas fa-ticket-alt"></i>meus ingressos</a>
-            <a href="index.php"><i class="fas fa-plus"></i>criar evento</a>
-            <a href="categorias.php"><i class="fas fa-caret-down"></i>categorias</a>
-            <a href="index.php"><i class="fas fa-home"></i>home</a>
-        </nav>
-    </header>
+    <?php 
+        include('php/layout/header.php');
+    ?>
 
     <!-- CONTEÚDO PRINCIPAL -->
     <div class="container">
 
         <div id="menu">
             <i class="fas fa-user"></i>
-            <h2>Olá, José</h2>
+            <h2>Olá, <?php echo $_SESSION["usuario"];?></h2>
             <p>Meus ingressos</p>
             <p>Criar evento</p>
             <p>Configurações</p>
@@ -54,7 +46,7 @@
                     <tr>
                         <td>JundTech DAY #1</td>
                         <td>08/02/2015</td>
-                        <td><a href="">IMPRIMIR</a></td>
+                        <td><a href="pdf/gerarpdf.php">IMPRIMIR</a></td>
                     </tr>
                 </tbody>
 
@@ -63,12 +55,6 @@
         </div>
     </div>
 
-    <!-- RODAPÉ -->
-    <footer>
-        <div id="social_media">
-            <a href=""><i class="fab fa-twitter"></i></a>
-            <a href=""><i class="fab fa-facebook-f"></i></a>
-            <a href=""><i class="fab fa-instagram"></i></a>
-        </div>
-        <p>Copyright &copy; 2018 - Ticket House</p>
-    </footer>
+    <?php 
+        include('php/layout/footer.php');
+    ?>
