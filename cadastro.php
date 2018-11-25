@@ -44,6 +44,17 @@
         include('php/layout/footer.php');
     ?>
 
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.mask.min.js"></script> 
+
+    <script>
+         $(document).ready(function () { 
+            let $campoCpf = $("#cpf");
+            $campoCpf.mask('000.000.000-00', {reverse: true});
+         });
+    </script>
+
 </body>
 
 </html>
