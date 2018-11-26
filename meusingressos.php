@@ -23,9 +23,8 @@
         <div id="menu">
             <i class="fas fa-user"></i>
             <h2>Olá, <?php echo $_SESSION["usuario"];?></h2>
-            <p>Meus ingressos</p>
-            <p>Criar evento</p>
-            <p>Configurações</p>
+            <p><a href="meusingressos.php">Meus ingressos</a></p>
+            <p><a href="perfil.php">Perfil</a></p>
         </div>
 
         <div id="ingressos">
@@ -43,11 +42,25 @@
                 </thead>
                 
                 <tbody>
-                    <tr>
-                        <td>JundTech DAY #1</td>
-                        <td>08/02/2015</td>
-                        <td><a href="pdf/gerarpdf.php">IMPRIMIR</a></td>
-                    </tr>
+                    <?php
+                        
+                        include 'php/database.php';
+                        $pdo = Database::connect();
+                        $sql = 'SELECT I.id, E.nome, E.data FROM eventos E INNER JOIN ingressos I ON i.id = e.id INNER JOIN usuarios U ON u.id = i.id_usuario WHERE u.id ='.$_SESSION["id"];
+        
+                        foreach ($pdo->query($sql) as $row) {
+                           
+                            $dataFormatada = date_format(date_create($row['data']), 'd/m/y');
+                            echo '<tr>';
+                            echo '<td>'. $row['nome'] . '</td>';
+                            echo '<td>'. $dataFormatada . '</td>';
+                            echo '<td><a href="pdf/gerarpdf.php?id='.$row['id'].'">IMPRIMIR</a></td>';
+                            echo '</tr>';
+                        }
+                        Database::disconnect();
+                    
+                    ?>
+                  
                 </tbody>
 
             </table>

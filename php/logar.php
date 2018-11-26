@@ -22,6 +22,7 @@
              $_SESSION["usuario"] = $data['usuario'];
              $_SESSION["email"] = $data['email'];
              $_SESSION["cpf"] = $data['cpf'];
+             $_SESSION["id"] = $data['id'];
 
 
             header("Location: ../meusingressos.php");

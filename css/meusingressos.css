@@ -57,10 +57,16 @@ td{
     padding: 10px 50px;
     background-color: #ececec;
 }
-
+tr{
+    text-align: center;
+}
 h1{
     font-size: 2em;
     margin-bottom: 20px;
+}
+
+table a {
+    color: #000;
 }
 
 /* Tablet */

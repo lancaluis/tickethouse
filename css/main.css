@@ -60,6 +60,12 @@ i{
     color: #fff;
 }
 
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
 @media screen and (max-width: 800px) {
     footer{
         bottom: auto;

@@ -30,36 +30,21 @@
 
         <!-- PRÓXIMOS EVENTOS -->
         <section id="proximos_eventos">
-            <div class="evento">
-                <h3>JundTech DAY</h3>
-                <h1>21</h1>
-                <h2>outubro</h2>
-                <button>Acessar</button>
-            </div>
-            <div class="evento">
-                <h3>Angra Fest</h3>
-                <h1>08</h1>
-                <h2>agosto</h2>
-                <button>Acessar</button>
-            </div>
-            <div class="evento">
-                <h3>Rock in Rio</h3>
-                <h1>09</h1>
-                <h2>julho</h2>
-                <button>Acessar</button>
-            </div>
-            <div class="evento">
-                <h3>Viveri Talks</h3>
-                <h1>14</h1>
-                <h2>março</h2>
-                <button>Acessar</button>
-            </div>
-            <div class="evento">
-                <h3>Nerzão #1</h3>
-                <h1>31</h1>
-                <h2>dezembro</h2>
-                <button>Acessar</button>
-            </div>
+            <?php
+                include 'php/database.php';
+                $pdo = Database::connect();
+                $sql = 'SELECT * FROM eventos ORDER BY id DESC';
+                foreach ($pdo->query($sql) as $row) {
+                   
+                    $dataFormatada = date_format(date_create($row['data']), 'd/m/y');
+                    echo '<div class="evento">';
+                    echo '<h3>'. $row['nome'] . '</h3>';
+                    echo '<h1>'. $dataFormatada . '</h1>';
+                    echo '<button>Acessar</button>';
+                    echo '</div>';
+                }
+                Database::disconnect();
+            ?>
         </section>
 
     </div>
